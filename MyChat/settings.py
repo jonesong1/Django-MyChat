@@ -25,6 +25,22 @@ SECRET_KEY = 'django-insecure-n23(@+ct32@=rcs&g**=g_0%h7*uum6kv(gp85ma)t)3i=env$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+    },
+}
+
 ALLOWED_HOSTS = []
 
 LOGIN_URL = '/login/'
@@ -40,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lesche',
+    'conversation',
 ]
 
 MIDDLEWARE = [
